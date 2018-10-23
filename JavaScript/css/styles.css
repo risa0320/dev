@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body{
+  backgroud: #efefef;
+}
+
+#btn{
+  margin: 30px auto 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #EF454A;
+  text-align: center;
+  line-height: 200px;
+  color: #fff;
+  font-size: 42px;
+  font-weigth: bold;
+  cursor: pointer;
+  opacity: 0.9; /*マウスオーバー時のボタン色を少し暗くする*/
+  box-shadow: 0 10px 0 #D1483E;
+  border: 3px solid #D1483E;
+  user-select: none;
+  /*btnを連打時に文字が選択された状態にならないように*/
+}
+
+#btn:hover{
+  opacity: 1;
+}
+
+#btn.pushed{
+  /*pushed実行時に適用*/
+  margin-top: 36px;
+  /*btnのmarginが30pxなのでそれに6px上乗せする*/
+  box-shadow: 0 4px 0 #D1483E;
+  /*box-shadowがない場合はボタン自体が下にずれるので、
+    押し込まれたようにするため設定。
+    また、6px分押し込まれたようにするため、btn自体の
+    box-shadowの10pxから押し込む量(6px)を引いた4pxにしている*/
+}
