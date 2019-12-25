@@ -8,3 +8,12 @@ services:
     command: tail -f /dev/null
     environment:
         PYTHONPATH: /py_dev/src
+
+  random_number_part:
+    build: docker/random_number_part
+    volumes:
+      - .:/py_dev
+    working_dir: /py_dev
+    command: tail -f /dev/null
+    environment:
+        PYTHONPATH: /py_dev/src
