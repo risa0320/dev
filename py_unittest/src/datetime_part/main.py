@@ -17,7 +17,7 @@ class TaskGenerator(object):
 def main():
     today = datetime.now()
     tasks = TaskGenerator().generate_tasks(today)
-    print(tasls)
+    print(tasks)
 
 if __name__ == '__main__':
     main()

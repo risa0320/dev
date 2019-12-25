@@ -16,7 +16,7 @@ class TaskGenerator(object):
 
 def main():
     tasks = TaskGenerator().generate_tasks()
-    print(tasls)
+    print(tasks)
 
 if __name__ == '__main__':
     main()
