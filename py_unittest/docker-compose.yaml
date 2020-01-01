@@ -1,7 +1,37 @@
 version: '3'
 services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'unittest'
+      MYSQL_USER: 'developer'
+      MYSQL_PASSWORD: 'developer'
+      MYSQL_ROOT_PASSWORD: 'docker'
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports: 
+      - 3306:3306
+
+  redis:
+    image: redis:5.0.7
+    volumes:
+      - ./docker/redis/data:/data
+    ports: 
+      - 6379:6379
+
   datetime_part:
     build: docker/datetime_part
+    volumes:
+      - .:/py_dev
+    working_dir: /py_dev
+    command: tail -f /dev/null
+    environment:
+        PYTHONPATH: /py_dev/src
+
+  db_connection_part:
+    build: docker/db_connection_part
     volumes:
       - .:/py_dev
     working_dir: /py_dev

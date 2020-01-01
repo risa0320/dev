@@ -1,2 +1,6 @@
 *.pyc
 */__pycache__/*
+py_unittest/docker/*/*.json
+py_unittest/docker/mysql/data/*
+py_unittest/docker/redis/data/*
+
