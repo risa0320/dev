@@ -1,0 +1,10 @@
+version: '3'
+services:
+  datetime_part:
+    build: docker/datetime_part
+    volumes:
+      - .:/py_dev
+    working_dir: /py_dev
+    command: tail -f /dev/null
+    environment:
+        PYTHONPATH: /py_dev/src
