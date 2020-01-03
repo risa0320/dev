@@ -38,3 +38,7 @@ services:
     command: tail -f /dev/null
     environment:
         PYTHONPATH: /py_dev/src
+        MYSQL_DATABASE: 'unittest'
+        MYSQL_USER: 'developer'
+        MYSQL_PASSWORD: 'developer'
+        MYSQL_ROOT_PASSWORD: 'docker'
